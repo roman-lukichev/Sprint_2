@@ -1,9 +1,9 @@
-package org.example.service;
+package service;
 
-import org.example.model.Food;
+import model.Food;
 
 public class ShoppingCart {
-    protected Food[] food;
+    private final Food[] food;
     public ShoppingCart(Food[] food) {
         this.food = food;
     }
@@ -11,7 +11,7 @@ public class ShoppingCart {
     public double getTotalWithoutDiscount() {
         double total = 0;
         for (Food i : food) {
-            total += i.getAmount() * i.getPrice();
+            total += i.getTotalPrice();
         }
         return total;
     }
@@ -19,7 +19,7 @@ public class ShoppingCart {
     public double getTotalWithDiscount() {
         double total = 0;
         for (Food i : food) {
-            total += i.getAmount() * i.getPrice() * (1-i.getDiscount());
+            total += i.getTotalDiscountPrice();
         }
         return total;
     }
@@ -27,7 +27,7 @@ public class ShoppingCart {
     public double getTotalVegetarianWithoutDiscount() {
         double total = 0;
         for (Food i : food) {
-            total = i.isVegetarian() ? total + i.getPrice() * i.getAmount() : total;
+            total = i.isVegetarian() ? total + i.getTotalPrice() : total;
         }
         return total;
     }

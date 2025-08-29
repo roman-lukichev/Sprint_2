@@ -1,4 +1,4 @@
-package org.example.model;
+package model;
 
 public interface Discountable {
     double getDiscount();
