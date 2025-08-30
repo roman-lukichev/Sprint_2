@@ -7,7 +7,7 @@ public abstract class Food implements Discountable{
     protected double price; //цена за килограмм
     protected boolean isVegetarian; //вегетарианский ли продукт
 
-    public Food(int amount, double price, boolean isVegetarian) {
+    protected Food(int amount, double price, boolean isVegetarian) {
         this.amount = amount;
         this.price = price;
         this.isVegetarian = isVegetarian;
