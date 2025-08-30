@@ -1,4 +1,4 @@
-package org.example.model.constants;
+package model.constants;
 
 public class Colour {
     public static final   String RED = "red";
